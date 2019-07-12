@@ -15,16 +15,48 @@ import LoginPage from 'containers/LoginPage/index';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
+// Import Firebase
+// eslint-disable-next-line import/no-unresolved,import/no-named-as-default-member
+import fireBase from '../../Firebase/firebase';
 
-export default function App() {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path= "/Login" component={LoginPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
-    </div>
-  );
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // eslint-disable-next-line react/no-unused-state
+      user: {},
+    };
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fireBase.auth().onAuthStateChanged(user => {
+      console.log(user);
+      if (user) {
+        // eslint-disable-next-line react/no-unused-state
+        this.setState({ user });
+        //   localStorage.setItem('user', user.uid);
+      } else {
+        // eslint-disable-next-line react/no-unused-state
+        this.setState({ user: null });
+        //  localStorage.removeItem("user");
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Switch>
+          {this.state.user ? <HomePage /> : <LoginPage />}
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <GlobalStyle />
+      </div>
+    );
+  }
 }
