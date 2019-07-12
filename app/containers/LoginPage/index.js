@@ -24,9 +24,13 @@ export function LoginPage() {
   return (
     <div>
       <Helmet>
-        <title>LoginPage</title>
-        <meta name="description" content="Description of LoginPage" />
+        <title>Login Page</title>
+        <meta
+          name="Login into MiPi"
+          content="MiPi user Login screen for returning users"
+        />
       </Helmet>
+      <h1>Welcome to MiPi</h1>
     </div>
   );
 }
