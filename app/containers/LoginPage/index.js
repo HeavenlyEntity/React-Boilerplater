@@ -87,7 +87,7 @@ class LoginPage extends React.Component {
             <button type="submit" onClick={this.login}>
               Login
             </button>
-            // TODO Make sign up method
+            {/* TODO Make sign up method */}
             <button onClick={this.signUp}>Sign Up</button>
           </div>
         </form>

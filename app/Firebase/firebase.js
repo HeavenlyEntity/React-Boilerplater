@@ -4,7 +4,7 @@ import firebase from 'firebase';
 // {/*<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>*/}
 
 // https://firebase.google.com/docs/web/setup#config-web-app
-
+// TODO set up database for firebase
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyDv5ONsqetztw8QEAo4t_MnXVTViWmUpqE',
