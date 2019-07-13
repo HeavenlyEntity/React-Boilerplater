@@ -5,17 +5,15 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
-import { useInjectReducer } from 'utils/injectReducer';
-import makeSelectLoginPage from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+// import reducer from './reducer';
+// import saga from './saga';
 // eslint-disable-next-line import/no-named-as-default-member
+// import { useInjectReducer } from 'utils/injectReducer';
+import makeSelectLoginPage from './selectors';
 import fireBase from '../../Firebase/firebase';
 
 class LoginPage extends React.Component {
@@ -89,6 +87,7 @@ class LoginPage extends React.Component {
             <button type="submit" onClick={this.login}>
               Login
             </button>
+            // TODO Make sign up method
             <button onClick={this.signUp}>Sign Up</button>
           </div>
         </form>
