@@ -23,7 +23,7 @@ class Navigation extends React.Component{
       <div>
         <ul>
           <li>
-            <Link to="/Login">Sign In</Link>
+            <Link to={LoginPage}>Sign In</Link>
           </li>
           <li>
             {/* eslint-disable-next-line react/jsx-no-undef */}
