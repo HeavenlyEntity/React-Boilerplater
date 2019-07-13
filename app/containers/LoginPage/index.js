@@ -23,11 +23,7 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       error: false,
-      // eslint-disable-next-line react/no-unused-state
-      name: '',
-      // eslint-disable-next-line react/no-unused-state
       password: '',
-      // eslint-disable-next-line react/no-unused-state
       email: '',
     };
     this.handleChange = this.handleChange.bind(this);

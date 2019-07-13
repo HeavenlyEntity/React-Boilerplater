@@ -6,7 +6,7 @@ import firebase from 'firebase';
 // https://firebase.google.com/docs/web/setup#config-web-app
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyDv5ONsqetztw8QEAo4t_MnXVTViWmUpqE',
   authDomain: 'mipi-ce353.firebaseapp.com',
   databaseURL: 'https://mipi-ce353.firebaseio.com',

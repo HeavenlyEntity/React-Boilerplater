@@ -23,7 +23,6 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // eslint-disable-next-line react/no-unused-state
       user: {},
     };
   }
@@ -34,7 +33,7 @@ export default class App extends React.Component {
 
   authListener() {
     fireBase.auth().onAuthStateChanged(user => {
-      console.log(user);
+      // console.log(user)
       if (user) {
         // eslint-disable-next-line react/no-unused-state
         this.setState({ user });

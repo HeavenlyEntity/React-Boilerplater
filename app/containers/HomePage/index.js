@@ -20,6 +20,7 @@ class HomePage extends React.Component {
   handleLogout() {
     fireBase.auth().signOut();
   }
+
   render() {
     return (
       <div>
