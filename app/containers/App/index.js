@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/index';
@@ -50,8 +50,14 @@ export default class App extends React.Component {
     return (
       <div>
         <Switch>
-          {this.state.user ? <HomePage /> : <LoginPage />}
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/Login" component={LoginPage} />
+          <Route
+            exact
+            path="/"
+            render={() =>
+              this.state.user ? <HomePage /> : <Redirect to="/Login" />
+            }
+          />
           <Route component={NotFoundPage} />
         </Switch>
         <GlobalStyle />
