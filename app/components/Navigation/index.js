@@ -6,10 +6,10 @@
 
 import React from 'react';
 // eslint-disable-next-line import/no-cycle
+import { Link } from 'react-router-dom';
+// eslint-disable-next-line import/no-cycle
 import HomePage from '../../containers/HomePage/index';
 // eslint-disable-next-line import/no-named-as-default-member
-import LoginPage from '../../containers/LoginPage/index';
-import { Link } from 'react-router-dom';
 // import MiSettingsPage from '../../containers/HomePage';
 // import MiFeedPage from '../../containers/HomePage';
 // import AdminPage from '../../containers/HomePage';
@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class Navigation extends React.Component{
+class Navigation extends React.Component {
   render() {
     return (
       <div>
@@ -26,7 +26,7 @@ class Navigation extends React.Component{
             <Link to={LoginPage}>Sign In</Link>
           </li>
           <li>
-            {/* eslint-disable-next-line react/jsx-no-undef */}
+            {/* eslint-disable-next-line react/jsx-no-undef,jsx-a11y/anchor-is-valid */}
             <Link to="#">Landing</Link>
           </li>
           <li>
