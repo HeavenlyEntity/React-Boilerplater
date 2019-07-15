@@ -14,6 +14,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/index';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
+import Fade from '@material-ui/core/Fade';
 import GlobalStyle from '../../global-styles';
 // Import Firebase
 // eslint-disable-next-line import/no-unresolved,import/no-named-as-default-member
@@ -46,18 +47,60 @@ export default class App extends React.Component {
     });
   }
 
+
+
   render() {
+    // Use if we have buttons leading to need to be signed in first. HOC
+    // const isAuthenticatedButtton = withRouter(
+    //   ({ history }) =>
+    //     this.state.user ? (
+    //
+    //     ) : (
+    //      // something notifying user needing to sign in first.
+    //     )
+    // );
+    const PrivateRoute = ({ component: Component, ...rest }) => (
+      <Route
+        {...rest}
+        render={props =>
+          this.state.user ? (
+            <Component {...props} />
+          ) : (
+            <Redirect
+              to={{
+                pathname: '/Login',
+              }}
+            />
+          )
+        }
+      />
+    );
+
+    const { from } = { from: { pathname: '/' } };
+
+    // if (this.state.user) return <Redirect to="/" />;
+
     return (
       <div>
         <Switch>
-          <Route exact path="/Login" component={LoginPage} />
+          {/* <Route
+            exact
+            path="/Introduction"
+            render={() =>
+              this.state.user ? <Redirect to="/"/> : <IntroductionPage />
+            }
+          /> */}
           <Route
             exact
-            path="/"
+            path="/Login"
             render={() =>
-              this.state.user ? <HomePage /> : <Redirect to="/Login" />
+              this.state.user ? <Redirect to="/" /> : <LoginPage />
             }
           />
+          <PrivateRoute path="/" component={HomePage} />
+          {/* <PrivateRoute path="/MiPortfolio" component={MiPortfolioPage} /> */}
+          {/* <PrivateRoute path="/Mifeed" component={MiFeedPage} /> */}
+          {/* <PrivateRoute path="/MiSettings" component={MiSettings} /> */}
           <Route component={NotFoundPage} />
         </Switch>
         <GlobalStyle />
