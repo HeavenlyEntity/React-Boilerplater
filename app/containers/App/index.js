@@ -14,7 +14,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/index';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
-import Fade from '@material-ui/core/Fade';
+import Fade from '@material-ui/core/Fade'; // Use Fade for Transitions
 import GlobalStyle from '../../global-styles';
 // Import Firebase
 // eslint-disable-next-line import/no-unresolved,import/no-named-as-default-member

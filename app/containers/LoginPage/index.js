@@ -1,8 +1,9 @@
 /**
  *
  * LoginPage
- *
+ * TODO Make Landing Page for before logging in
  */
+
 // import saga from './saga';
 // import reducer from './reducer';
 // eslint-disable-next-line import/no-named-as-default-member
@@ -52,19 +53,16 @@ class LoginPage extends React.Component {
       showPassword: false,
       user: {},
     };
-    // this.handleChange = this.handleChange.bind(this);
     this.login = this.login.bind(this);
     this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
   }
 
   login(e) {
-    // eslint-disable-next-line no-alert
     // alert(`Login Button Pressed${this.state.password} ${this.state.email}`);
     e.preventDefault();
     fireBase
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      // eslint-disable-next-line no-shadow,consistent-return
       .then(u => {
         // console.log(u);
         this.setState({ user: u });
@@ -96,7 +94,6 @@ class LoginPage extends React.Component {
 
   getEmailValue = email => this.setState({ email });
 
-  // eslint-disable-next-line no-console
   getPassValue = password => this.setState({ password });
 
   render() {
@@ -141,7 +138,6 @@ class LoginPage extends React.Component {
                   <p className="font-small blue-text d-flex justify-content-end pb-3 forgotPasswordText">
                     Forgot
                     <a href="#!" className="blue-text ml-1">
-
                       Password?
                     </a>
                   </p>
