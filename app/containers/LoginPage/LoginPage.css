@@ -34,6 +34,13 @@
   -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
   box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
 }
+
+.signInWithButtons {
+  border-radius: 100em;
+}
+.signInBtnContent {
+  border-radius: 100em;
+}
 @media (min-width: 992px) and (max-width: 1199px) {
   .forgotPasswordText {
     height: 20%;
@@ -283,5 +290,33 @@
   .signInButton {
     margin-top: 50px;
     height: 25%;
+  }
+}
+@media (min-width: 2000px) {
+  .forgotPasswordText {
+    height: 20%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .noMemberText {
+    margin-top: 60%;
+    height: 25%;
+  }
+  .signInHeaderText {
+    font-family: "Yu Gothic", sans-serif;
+    font-size: 18pt;
+  }
+  .signInHeaderContainer {
+    margin-top: 1.5em;
+  }
+  .signInButton {
+    margin-top: 50px;
+    height: 25%;
+  }
+  .signInCardBody {
+    height: 35%;
+  }
+  .signInCard {
+    height: 65%;
   }
 }

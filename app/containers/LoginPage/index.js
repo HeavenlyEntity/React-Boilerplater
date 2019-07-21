@@ -69,7 +69,7 @@ class LoginPage extends React.Component {
         if (this.state.user) {
           return (
             // console.log(this.state.user);
-            <Redirect from="/Login" to="/" />
+            {/*<Redirect from="/Login" to="/" />*/}
           );
         }
       })
@@ -146,7 +146,7 @@ class LoginPage extends React.Component {
                       type="button"
                       gradient="blue"
                       rounded
-                      className="btn-block z-depth-1a"
+                      className="btn-block z-depth-1a signInBtnContent"
                       onClick={this.login}
                     >
                       Sign in

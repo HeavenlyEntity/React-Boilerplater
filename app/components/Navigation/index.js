@@ -27,7 +27,7 @@ class Navigation extends React.Component {
           </li>
           <li>
             {/* eslint-disable-next-line react/jsx-no-undef,jsx-a11y/anchor-is-valid */}
-            <Link to="#">Landing</Link>
+            <Link to="/landing">Landing</Link>
           </li>
           <li>
             {/* eslint-disable-next-line react/jsx-no-undef */}
