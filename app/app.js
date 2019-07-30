@@ -28,21 +28,22 @@ import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 import 'file-loader?name=.htaccess!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
+// Import AOS and initialization
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+// eslint-disable-next-line import/first
 import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
 
-
-
 // Create redux store with history
 const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
-
+AOS.init();
 
 const render = messages => {
-
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>

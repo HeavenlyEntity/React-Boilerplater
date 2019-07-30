@@ -1,9 +1,12 @@
-/**
+/*
  *
  * App.js
  *
  * This component is the skeleton around the actual pages, and should only
  * contain code that should be seen on all pages. (e.g. navigation bar)
+ *
+ *  <PrivateRoute path="/MiPortfolio" component={MiPortfolioPage} />
+ *  <PrivateRoute path="/MiSettings" component={MiSettings} />
  *
  */
 
@@ -91,9 +94,6 @@ export default class App extends React.Component {
           />
           <Route exact path="/landing" component={LandingPage} />
           <PrivateRoute path="/" component={HomePage} />
-          {/* <PrivateRoute path="/MiPortfolio" component={MiPortfolioPage} /> */}
-          {/* <PrivateRoute path="/Mifeed" component={MiFeedPage} /> */}
-          {/* <PrivateRoute path="/MiSettings" component={MiSettings} /> */}
           <Route component={NotFoundPage} />
         </Switch>
         <GlobalStyle />
