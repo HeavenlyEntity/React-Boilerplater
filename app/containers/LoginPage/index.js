@@ -30,7 +30,7 @@ import {
   MDBIcon,
   MDBModalFooter,
 } from 'mdbreact';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import fireBase from '../../Firebase/firebase';
 import makeSelectLoginPage from './selectors';
 import './LoginPage.css';
@@ -43,7 +43,7 @@ const theme = createMuiTheme({
   },
 });
 
-class LoginPage extends React.Component {
+export class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,14 +64,16 @@ class LoginPage extends React.Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(u => {
-        // console.log(u);
+        // console.log(u); for debugging
         this.setState({ user: u });
-        if (this.state.user) {
-          return (
-            // console.log(this.state.user);
-            {/*<Redirect from="/Login" to="/" />*/}
-          );
-        }
+        // if (this.state.user) {
+        //   return (
+        //     // console.log(this.state.user);
+        //     {
+        //       /* <Redirect from="/Login" to="/" /> */
+        //     }
+        //   );
+        // }
       })
       .catch(error => {
         console.log(error);

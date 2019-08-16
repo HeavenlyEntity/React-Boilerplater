@@ -11,13 +11,12 @@
  */
 
 import React from 'react';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
-
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Fade from '@material-ui/core/Fade'; // Use Fade for Transitions
 import HomePage from '../HomePage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
 import LoginPage from '../LoginPage';
 import LandingPage from '../LandingPage/index';
-import Fade from '@material-ui/core/Fade'; // Use Fade for Transitions
 import GlobalStyle from '../../global-styles';
 // Import Firebase
 // eslint-disable-next-line import/no-unresolved,import/no-named-as-default-member
@@ -78,16 +77,12 @@ export default class App extends React.Component {
       />
     );
 
-    const { from } = { from: { pathname: '/' } };
-
-    // if (this.state.user) return <Redirect to="/" />;
-
     return (
       <div>
         <Switch>
           <Route
             exact
-            path="/Login"
+            path="/login"
             render={() =>
               this.state.user ? <Redirect to="/" /> : <LoginPage />
             }
